@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-17 22:14+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: memmit/templates/memmit.html:30
+msgid "help"
+msgstr "помощь"
+
+#: memmit/templates/memmit.html:34
+msgid "refresh"
+msgstr "обновить"
+
+#: memmit/templates/memmit.html:49 memmit/templates/memmit.html.py:50
+msgid "hide"
+msgstr "скрыть"
+
+#: memmit/templates/memmit.html:51
+msgid "Hide"
+msgstr "Скрыть"
+
+#: memmit/templates/memmit.html:64 memmit/templates/memmit.html.py:65
+msgid "show"
+msgstr "показать"
+
+#: memmit/templates/memmit.html:66
+msgid "Show"
+msgstr "Показать"
+
+#: memmit/templates/memmit.html:75 memmit/templates/memmit.html.py:76
+#: memmit/templates/memmit.html:92 memmit/templates/memmit.html.py:93
+msgid "check"
+msgstr "проверить"
+
+#: memmit/templates/memmit.html:77
+msgid "Check"
+msgstr "Проверить"
+
+#: memmit/templates/memmit.html:94
+msgid "Submit"
+msgstr "Отправить"
+
+#: memmit/templates/memmit.html:106 memmit/templates/memmit.html.py:107
+msgid "submit"
+msgstr "отправить"
+
+#: memmit/templates/memmit.html:108
+msgid "Help"
+msgstr "Помощь"
+
+#: memmit/templates/memmit.html:119
+msgid "simplify"
+msgstr "упростить"
+
+#: memmit/templates/memmit.html:120
+msgid "remove"
+msgstr "убрать"
+
+#: memmit/templates/memmit.html:127
+msgid "hint: refresh"
+msgstr "Обновить задачу со случайными данными"
+
+#: memmit/templates/memmit.html:128
+msgid "hint: simplify"
+msgstr "Показать упрощенный вариант задачи"
+
+#: memmit/templates/memmit.html:129
+msgid "hint: remove simplify"
+msgstr "Убрать упрощенный вариант задачи"
+
+#: memmit/templates/mt_numbers.html:5
+msgid "Numbers Memmit Title"
+msgstr "Числа"
+
+#: memmit/templates/mt_numbers.html:32
+msgid "hint: mt-numbers number input strip"
+msgstr ""
+"Держите нажатой клавишу Ctrl в комбинации с Del, Backspace, ⬅ или ➡ чтобы "
+"перемещаться от одного числа к другому"
+
+#: memmit/templates/mt_numletters.html:5
+msgid "NumLetters Memmit Title"
+msgstr "Буквы / Звуки"
+
+#: memmit/templates/mt_numletters.html:21
+msgid "Variants"
+msgstr "Варианты"
+
+#: memmit/templates/mt_numletters.html:21
+msgid "choose"
+msgstr "на выбор"
+
+#: memmit/templates/mt_numletters.html:30
+msgid "Mnemonic"
+msgstr "Мнемоника"
+
+#: memmit/templates/mt_numletters.html:57
+msgid "hint: mt-numletters letter strip"
+msgstr ""
+"Неокторые буквы или звуки можно выбрать из списка доступных альтернатив"
+
+#: memmit/templates/mt_words.html:5
+msgid "Words Memmit Title"
+msgstr "Слова"

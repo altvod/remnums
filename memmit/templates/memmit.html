@@ -1,0 +1,139 @@
+{% load jsonify %}
+{% load i18n %}
+
+<script type="text/javascript">
+var memmlib = memmlib || {};
+memmlib.initialMemmitData = memmlib.initialMemmitData || {};
+memmlib.initialMemmitData['{{ id }}'] = {
+    data: {{ data|jsonify }},
+    attributes: {{ attributes|jsonify }}
+};
+</script>
+
+<div class="memmit-outer-wrap" data-memmit-id="{{ id }}" data-memmit-type="{{ type }}">
+
+<div class="sizeless-anchor float-left">
+    <div class="top-right">
+        <div class="memmit-hint-box"></div>
+    </div>
+</div>
+
+<div class="memmit-title">
+    &lt;
+    {% block memmit_header %}
+        Default Memmit
+    {% endblock %}
+    &gt;
+    <div class="sizeless-anchor float-right">
+        <div class="top-right">
+            <img class="memmit-btn memmit-help-btn" height="25" width="30"
+                 title="{% trans 'help' %}" alt="{% trans 'help' %}"
+                 src="/static/img/icons/memmit-help.png" />
+            {% if attributes.refreshable %}
+                <img class="memmit-btn memmit-refresh-btn" height="25" width="30"
+                     title="{% trans 'refresh' %}" alt="{% trans 'refresh' %}"
+                     src="/static/img/icons/memmit-refresh.png" />
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="memmit-inner-container">
+
+<div class="memmit-inner-wrap">
+    {% block memmit_content %}
+    {% endblock %}
+    <div class="memmit-block-btn memmit-hide-btn">
+        <table cellpadding="0" cellspacing="0" class="memmit-block-btn-table">
+            <tr>
+                <td><img height="25" src="/static/img/icons/memmit-hide.png" alt="{% trans 'hide' %}"
+                         title="{% trans 'hide' %}"/></td>
+                <td>{% trans 'Hide' %}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="memmit-hidden-placeholder hidden">
+    <table cellpadding="0" cellspacing="0" class="memmit-stretched-table">
+        <tr>
+            <td>
+                <div class="memmit-block-btn memmit-show-btn">
+                    <table cellpadding="0" cellspacing="0" class="memmit-block-btn-table">
+                        <tr>
+                            <td><img height="25" src="/static/img/icons/memmit-show.png" alt="{% trans 'show' %}"
+                                     title="{% trans 'show' %}"/></td>
+                            <td>{% trans 'Show' %}</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td>
+                <div class="memmit-block-btn memmit-guessit-btn">
+                    <table cellpadding="0" cellspacing="0" class="memmit-block-btn-table">
+                        <tr>
+                            <td><img height="25" src="/static/img/icons/memmit-check.png" alt="{% trans 'check' %}"
+                                     title="{% trans 'check' %}"/></td>
+                            <td>{% trans 'Check' %}</td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="guessit-inner-wrap hidden">
+    {% block guessit_content %}
+    {% endblock %}
+    <div class="memmit-block-btn memmit-submit-btn">
+        <table cellpadding="0" cellspacing="0" class="memmit-block-btn-table">
+            <tr>
+                <td><img height="25" src="/static/img/icons/memmit-submit.png" alt="{% trans 'check' %}"
+                         title="{% trans 'check' %}"/></td>
+                <td>{% trans 'Submit' %}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="memmit-help-wrap hidden">
+    {% block help_content %}
+    {% endblock %}
+    <div class="memmit-block-btn memmit-submit-btn">
+        <table cellpadding="0" cellspacing="0" class="memmit-block-btn-table">
+            <tr>
+                <td><img height="25" src="/static/img/icons/memmit-help.png" alt="{% trans 'submit' %}"
+                         title="{% trans 'submit' %}"/></td>
+                <td>{% trans 'Help' %}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</div>
+
+{% if attributes.simplifiable %}
+    <div class="sizeless-anchor float-left">
+        <div class="top-left">
+            <span class="memmit-btn memmit-simplify-btn" title="{% trans 'simplify' %}"></span>
+            <span class="memmit-btn memmit-hide-simplified-btn" title="{% trans 'remove' %}"></span>
+        </div>
+    </div>
+{% endif %}
+
+{% block memmit_hints %}
+    <!-- Base Hint Section -->
+    <span class="memmit-hint" data-hint-for=".memmit-refresh-btn">{% trans 'hint: refresh' %}</span>
+    <span class="memmit-hint" data-hint-for=".memmit-simplify-btn">{% trans 'hint: simplify' %}</span>
+    <span class="memmit-hint" data-hint-for=".memmit-hide-simplified-btn">{% trans 'hint: remove simplify' %}</span>
+    <!-- End Hint Section -->
+{% endblock %}
+
+<div class="memmit-help-container">
+    <div class="memmit-help-inner-wrap">
+        {{ help|safe }}
+    </div>
+</div>
+
+</div>

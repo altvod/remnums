@@ -1,0 +1,305 @@
+/* Generic Styles */
+.memmit-container {
+    border: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.memmit-outer-wrap {
+    background-color: #ffffff;
+    border: 1px dashed #cacaca;
+    border-radius: 30px;
+    box-shadow: 2px 2px 12px #cacaca;
+    padding: 5px;
+}
+.memmit-stretched-table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.memmit-inner-container {
+}
+.memmit-title {
+    color: #5b5b5b;
+    cursor: pointer;
+    font-size: 14pt;
+    margin: 10px;
+    text-align: center;
+}
+.memmit-inner-wrap {
+    min-height: 100px;
+    text-align: center;
+}
+.memmit-hidden-placeholder {
+    color: #2f2f2f;
+    font-size: 30pt;
+    text-align: center;
+}
+.guessit-inner-wrap {
+    min-height: 100px;
+    text-align: center;
+}
+.memmit-btn {
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 0.25;
+}
+.memmit-btn:hover {opacity: 0.5;}
+
+.memmit-block-btn {
+/*    background-color: #f8f8f8;
+    border: 1px solid #c5c5c5;*/
+    color: #000000;
+    cursor: pointer;
+    display: block;
+    font-size: 14pt;
+    margin: 2px;
+    opacity: 0.5;
+    padding: 5px;
+    text-align: center;
+}
+.memmit-block-btn:hover {opacity: 0.8;}
+.memmit-block-btn-table {
+    border-collapse: collapse;
+    vertical-align: middle;
+    width: 100%;
+}
+.memmit-block-btn-table td {padding: 0 5px 0 5px; width: 50%;}
+.memmit-block-btn-table td:nth-child(1) {text-align: right;}
+.memmit-block-btn-table td:nth-child(2) {text-align: left;}
+
+.memmit-simplify-btn, .memmit-hide-simplified-btn {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    left: 5px;
+    margin-bottom: -50px;
+    position: relative;
+    top: -35px;
+    width: 50px;
+}
+.memmit-simplify-btn {
+    background-image: url("/static/img/icons/memmit-simplify.png");
+    height: 76px;
+}
+.memmit-hide-simplified-btn {
+    background-image: url("/static/img/icons/memmit-simplified.png");
+    display: none;
+    height: 86px;
+}
+.memmit-hide-simplified-btn:hover {
+    background-image: url("/static/img/icons/memmit-hide-simplified.png");
+}
+.memmit-hint-box {
+    color: #8f8f8f;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: normal;
+    position: relative;
+    right: 25px;
+    text-align: right;
+    top: 40px;
+    white-space: normal;
+    width: 150px;
+}
+.memmit-hint {
+    display: none;
+}
+
+.memmit-help-container {
+    display: none;
+}
+.memmit-help-inner-wrap {
+    padding: 30px;
+}
+
+
+/* Numbers Memmit */
+.mt-numbers-number-strip {
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+}
+.mt-numbers-number, .mt-numbers-number-hl {
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: inset 0 0 3px #797979;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 3px;
+    padding: 3px 0 3px 0;
+    text-align: center;
+    width: 21px;
+}
+.mt-numbers-number-hl {
+    background-color: #ffe98e;
+}
+.mt-numbers-number-input, .mt-numbers-number-input-wrong, .mt-numbers-number-input-right,
+.mt-numbers-number-input-hl {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: bold;
+    height: 24px;
+    margin: 2px;
+    text-align: center;
+    width: 21px;
+}
+.mt-numbers-number-input, .mt-numbers-number-input-hl {border-color: #ffffff #ffffff #757575 #ffffff;}
+.mt-numbers-number-input:hover {border-color: #d0d0d0 #d0d0d0 #757575 #d0d0d0;}
+.mt-numbers-number-input:not(:empty) {box-shadow: inset 0 0 3px #797979;}
+.mt-numbers-number-input-wrong {
+    background-color: #ffbebc;
+    border-color: #b2463a;
+    text-decoration: line-through;
+}
+.mt-numbers-number-input-wrong:not(:empty) {box-shadow: inset 0 0 3px #8c473b;}
+.mt-numbers-number-input-right {
+    background-color: #e3ffce;
+    border-color: #4eac3e;
+}
+.mt-numbers-number-input-right:not(:empty) {box-shadow: inset 0 0 3px #4c843e;}
+.mt-numbers-number-input-hl {
+    background-color: #ffe98e;
+}
+
+/* NumLetters Memmit */
+.mt-numletters-letter-strip {
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    width: 650px;
+}
+.mt-numletters-letter, .mt-numletters-letter-hl {
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: inset 0 0 3px #797979;
+    display: inline-block;
+    font-size: 18px;
+    margin: 3px;
+    min-width: 21px;
+    padding: 3px 2px 3px 2px;
+    text-align: center;
+}
+.mt-numletters-letter-hl {
+    background-color: #ffe98e;
+}
+.mt-numletters-letter-chooser {
+    background-color: #ffffff;
+    border: 1px solid #cacaca;
+    box-shadow: 2px 2px 5px #cacaca;
+    display: none;
+    font-size: 10pt;
+    font-weight: normal;
+    width: 300px;
+}
+.mt-numletters-letter-chooser td {
+    padding: 2px;
+    vertical-align: top;
+}
+.mt-numletters-variants-title {font-weight: bold;}
+.mt-numletters-letter-variant {cursor: pointer;}
+.mt-numletters-letter-variant:nth-child(odd) {background-color: #f0f0f0}
+.mt-numletters-letter-variant:nth-child(even) {background-color: #ffffff}
+.mt-numletters-letter-variant:hover {text-decoration: underline;}
+.mt-numletters-mnemonic {
+    border-left: 1px dotted #dedede;
+    font-style: italic;
+    white-space: normal;
+}
+.mt-numletters-mnemonic-title {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.mt-numletters-letter-input, .mt-numletters-letter-input-wrong, .mt-numletters-letter-input-right,
+.mt-numletters-letter-input-hl {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-size: 18px;
+    height: 24px;
+    margin: 3px;
+    min-width: 21px;
+    text-align: center;
+}
+.mt-numletters-letter-input, .mt-numletters-letter-input-hl {border-color: #ffffff #ffffff #757575 #ffffff;}
+.mt-numletters-letter-input:hover {border-color: #d0d0d0 #d0d0d0 #757575 #d0d0d0;}
+.mt-numletters-letter-input:not(:empty) {box-shadow: inset 0 0 3px #797979;}
+.mt-numletters-letter-input-wrong {
+    background-color: #ffbebc;
+    border-color: #b2463a;
+    text-decoration: line-through;
+}
+.mt-numletters-letter-input-wrong:not(:empty) {box-shadow: inset 0 0 3px #8c473b;}
+.mt-numletters-letter-input-right {
+    background-color: #e3ffce;
+    border-color: #4eac3e;
+}
+.mt-numletters-letter-input-right:not(:empty) {box-shadow: inset 0 0 3px #4c843e;}
+.mt-numletters-letter-input-hl {
+    background-color: #ffe98e;
+}
+
+/* Words Memmit */
+.mt-words-word-strip {
+    display: inline-block;
+    padding: 10px;
+    text-align: left;
+    width: 650px;
+}
+.mt-words-word, .mt-words-word-hl {
+    background-color: #fafafa;
+    border-radius: 5px;
+    box-shadow: inset 0 0 3px #797979;
+    display: inline-block;
+    font-size: 16px;
+    height: 20px;
+    margin: 1px 2px 1px 2px;
+    min-width: 60px;
+    padding: 3px 3px 3px 3px;
+    text-align: center;
+}
+.mt-words-word-hl {
+    background-color: #ffe98e;
+}
+
+.mt-words-word-input, .mt-words-word-input-wrong, .mt-words-word-input-right,
+.mt-words-word-input-hl {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    font-size: 14px;
+    height: 20px;
+    margin: 3px;
+    min-width: 60px;
+    padding: 2px;
+    text-align: center;
+}
+.mt-words-word-input, .mt-words-word-input-hl {border-color: #ffffff #ffffff #757575 #ffffff;}
+.mt-words-word-input:hover {border-color: #d0d0d0 #d0d0d0 #757575 #d0d0d0;}
+.mt-words-word-input:not(:empty) {box-shadow: inset 0 0 3px #797979;}
+.mt-words-word-input-wrong {
+    background-color: #ffbebc;
+    border-color: #b2463a;
+    text-decoration: line-through;
+}
+.mt-words-word-input-wrong:not(:empty) {box-shadow: inset 0 0 3px #8c473b;}
+.mt-words-word-input-right {
+    background-color: #e3ffce;
+    border-color: #4eac3e;
+}
+.mt-words-word-input-right:not(:empty) {box-shadow: inset 0 0 3px #4c843e;}
+.mt-words-word-input-hl {
+    background-color: #ffe98e;
+}

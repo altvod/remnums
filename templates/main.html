@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Remember Numbers</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/memmit.css">
+    <script src="/static/js/communication.js"></script>
+    <script src="/static/js/controls.js"></script>
+    <script src="/static/js/dialog.js"></script>
+    <script src="/static/js/memmit.js"></script>
+    <script src="/static/js/misc.js"></script>
+</head>
+<body>
+{% include 'language_bar.html' %}
+<div class="content-column">
+    {% block main %}
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    background-color: #f6f6f6;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.content-column {
+    margin: 0 auto;
+    max-width: 700px;
+    text-align:left;
+}
+
+.hidden {
+    display: none;
+}
+
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+
+
+.sizeless-anchor {
+    border: none;
+    display: inline-block;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 0;
+}
+.sizeless-anchor div.top-right, .sizeless-anchor div.top-left {
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 2;
+}
+.sizeless-anchor div.top-right {
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+.sizeless-anchor div.top-left {
+    left: 0;
+    text-align: left;
+    top: 0;
+}
+
+.dialog-shadow {
+    background-color: black;
+    display: block;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    pointer-events: all;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+.dialog-placement-table {
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+}
+.dialog-placement-table > tr:nth-child(2) > td:nth-child(2){
+    cursor: pointer;
+    vertical-align: top;
+    width: 500px;
+}
+.dialog-outer-wrap {
+    background-color: white;
+    border-radius: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.help-text p {
+    text-align: justify;
+}
+.help-text ol {
+    text-align: left;
+}
+.help-text ol {
+    text-align: left;
+}
+
+.language-bar {white-space: normal;}
+.language-flag {
+    cursor: pointer;
+    opacity: 0.5;
+}
+.language-flag:hover {opacity: 0.8;}

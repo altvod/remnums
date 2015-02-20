@@ -1,0 +1,35 @@
+{% extends "memmit.html" %}
+{% load i18n %}
+
+{% block memmit_header %}
+    {% trans "Words Memmit Title" %}
+{% endblock %}
+
+{% block memmit_content %}
+    <div class="mt-words-word-strip">
+        {% for word in data.words %}
+            <span class="mt-words-word" contenteditable="true"
+                  data-numletter-num="{{ forloop.counter0 }}"
+                  data-memmit-internal-id="{{ forloop.counter0 }}"
+                  data-highlighted-class="mt-words-word-hl">
+                <span>{{ word }}</span>
+            </span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block guessit_content %}
+    <div class="mt-words-word-strip">
+        {% for word in data.words %}
+            <span class="mt-words-word-input" contenteditable="true"
+                  data-input-num="{{ forloop.counter0 }}" data-memmit-internal-id="{{ forloop.counter0 }}"
+                  data-highlighted-class="mt-words-word-input-hl"></span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block memmit_hints %}
+    {{ block.super }}
+    <!-- New Hint Section -->
+    <!-- End Hint Section -->
+{% endblock %}

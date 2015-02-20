@@ -1,0 +1,34 @@
+{% extends "memmit.html" %}
+{% load i18n %}
+
+{% block memmit_header %}
+    {% trans "Numbers Memmit Title" %}
+{% endblock %}
+
+{% block memmit_content %}
+    <div class="mt-numbers-number-strip">
+        {% for number in data.numbers %}
+            {% if forloop.counter0 > 0 and forloop.counter0|divisibleby:"20" %}<br />{% endif %}
+            <span class="mt-numbers-number" data-memmit-internal-id="{{ forloop.counter0 }}"
+                  data-highlighted-class="mt-numbers-number-hl">{{ number }}</span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block guessit_content %}
+    <div class="mt-numbers-number-strip">
+        {% for number in data.numbers %}
+            {% if forloop.counter0|divisibleby:"20" %}<br />{% endif %}
+            <span class="mt-numbers-number-input" contenteditable="true"
+                  data-input-num="{{ forloop.counter0 }}" data-memmit-internal-id="{{ forloop.counter0 }}"
+                  data-highlighted-class="mt-numbers-number-input-hl"></span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block memmit_hints %}
+    {{ block.super }}
+    <!-- New Hint Section -->
+    <span class="memmit-hint" data-hint-for=".guessit-inner-wrap .mt-numbers-number-strip">{% trans 'hint: mt-numbers number input strip' %}</span>
+    <!-- End Hint Section -->
+{% endblock %}

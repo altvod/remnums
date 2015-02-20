@@ -1,0 +1,59 @@
+{% extends "memmit.html" %}
+{% load i18n %}
+
+{% block memmit_header %}
+    {% trans "NumLetters Memmit Title" %}
+{% endblock %}
+
+{% block memmit_content %}
+    <div class="mt-numletters-letter-strip">
+        {% for letter_data in data.letters %}
+            <span class="mt-numletters-letter" data-numletter-num="{{ forloop.counter0 }}"
+                  data-memmit-internal-id="{{ forloop.counter0 }}"
+                  data-highlighted-class="mt-numletters-letter-hl">
+                <span>{{ letter_data.repr.0 }}</span><div class="sizeless-anchor float-right">
+                    <div class="top-left">
+                        <div class="mt-numletters-letter-chooser">
+                            <table>
+                                <tr>
+                                    {% if letter_data.repr|length > 1 %}
+                                        <td>
+                                            <span class="mt-numletters-variants-title">{% trans "Variants" %}</span> [{% trans "choose" %}]:
+                                            <ul>
+                                                {% for variant in letter_data.repr %}
+                                                    <li class="mt-numletters-letter-variant">{{ variant }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    {% endif %}
+                                    <td class="mt-numletters-mnemonic">
+                                        <span class="mt-numletters-mnemonic-title">{% trans "Mnemonic" %}</span>:
+                                        <br />
+                                        {{ letter_data.mnemonic }}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block guessit_content %}
+    <div class="mt-numletters-letter-strip">
+        {% for letter_data in data.letters %}
+            <span class="mt-numletters-letter-input" contenteditable="true"
+                  data-input-num="{{ forloop.counter0 }}" data-memmit-internal-id="{{ forloop.counter0 }}"
+                  data-highlighted-class="mt-numletters-letter-input-hl"></span>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block memmit_hints %}
+    {{ block.super }}
+    <!-- New Hint Section -->
+    <span class="memmit-hint" data-hint-for=".memmit-inner-wrap .mt-numletters-letter-strip">{% trans 'hint: mt-numletters letter strip' %}</span>
+    <!-- End Hint Section -->
+{% endblock %}
