@@ -93,5 +93,5 @@ TEMPLATE_DIRS = (
 )
 
 LOCALE_PATHS = (
-    'locale',
+    os.path.join(BASE_DIR,  'locale'),
 )
