@@ -86,6 +86,9 @@ body {
     padding: 0;
 }
 
+.help-text {
+    font-size: 12pt;
+}
 .help-text p {
     text-align: justify;
 }
@@ -97,8 +100,11 @@ body {
 }
 
 .language-bar {white-space: normal;}
-.language-flag {
+.language-option {
     cursor: pointer;
-    opacity: 0.5;
+    color: #5b5b5b;
+    display: inline-block;
+    font-size: 12pt;
+    margin: 10px;
 }
-.language-flag:hover {opacity: 0.8;}
+.language-option:hover {color: #3e3e3e;}

@@ -15,7 +15,7 @@ memmlib.setLanguage = function(language){
 };
 
 memmlib.bindLanguageButtons = function() {
-    var langButtons = document.querySelectorAll('.language-flag');
+    var langButtons = document.querySelectorAll('.language-option');
     var bindClick;
     for (var i = 0; i < langButtons.length; i++) {
         bindClick = function(button) {

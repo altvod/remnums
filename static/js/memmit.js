@@ -66,7 +66,7 @@ memmlib.Memmit.prototype.reverseIdMap = function(mapping) {
 };
 
 memmlib.Memmit.prototype.findChildBySelector = function(childSelector) {
-    return document.querySelectorAll('[data-memmit-id="'+this.id+'"] '+childSelector).item(0);
+    return document.querySelector('[data-memmit-id="'+this.id+'"] '+childSelector);
 };
 
 memmlib.Memmit.prototype.findChildrenBySelector = function(childSelector) {
@@ -117,7 +117,7 @@ memmlib.Memmit.prototype.bindHints = function() {
 
 memmlib.Memmit.prototype.showHelp = function() {
     var helpBox = this.findChildBySelector('.memmit-help-container');
-    memmlib.showSimpleDialog(helpBox.innerHTML, {y: 100, width: 600});
+    memmlib.showSimpleDialog(helpBox.innerHTML, {y: 80, width: 600});
 };
 
 memmlib.Memmit.prototype.displayChildBySelector = function(childSelector, display) {
@@ -257,6 +257,7 @@ memmlib.Memmit.prototype.simplify = function() {
 
 memmlib.Memmit.prototype.remove = function() {
     this.removeSimplified();
+    memmlib.unRegisterMemmit(this.id);
     this.container.parentNode.removeChild(this.container);
 };
 
