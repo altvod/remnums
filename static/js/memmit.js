@@ -8,6 +8,7 @@ var memmlib = memmlib || {};
 memmlib.memmitTypeRegistry = {};
 memmlib.memmitRegistry = {};
 memmlib.initialMemmitData = memmlib.initialMemmitData || {};
+memmlib.ajaxLock = false;
 
 
 /** @constructor */
@@ -142,14 +143,21 @@ memmlib.Memmit.prototype.replace = function(args) {
 };
 
 memmlib.Memmit.prototype.refresh = function() {
+    if (memmlib.ajaxLock) {
+        return
+    }
     var self = this;
+    memmlib.ajaxLock = true;
     jsonRequest({
         url: '/json/memmit/'+self.type+'/random',
         onSuccess: function(response) {
             self.replace(response.memmit);
+            memmlib.ajaxLock = false;
         },
         onError: function(response) {
-            alert('error');
+            memmlib.ajaxLock = false;
+            memmlib.showSimpleDialog('&lt;h2&gt;Server Error&lt;/h2&gt;'+
+                                     '&lt;p&gt;'+JSON.stringify(response)+'&lt;/h2&gt;');
         },
         data: {}
     });
@@ -223,6 +231,10 @@ memmlib.Memmit.prototype.simplify = function() {
     if (this.simplified) {
         return;
     }
+    if (memmlib.ajaxLock) {
+        return;
+    }
+    memmlib.ajaxLock = true;
     var self = this;
     jsonRequest({
         url: '/json/memmit/'+self.type+'/simplify',
@@ -231,9 +243,12 @@ memmlib.Memmit.prototype.simplify = function() {
             self.hideChildBySelector('.memmit-simplify-btn');
             self.displayChildBySelector('.memmit-hide-simplified-btn', 'inline-block');
             self.simplified = true;
+            memmlib.ajaxLock = false;
         },
         onError: function(response) {
-            alert('error');
+            memmlib.ajaxLock = false;
+            memmlib.showSimpleDialog('&lt;h2&gt;Server Error&lt;/h2&gt;'+
+                                     '&lt;p&gt;'+JSON.stringify(response)+'&lt;/h2&gt;');
         },
         data: {memmit: {data: self.data}},
         method: 'post'
