@@ -457,7 +457,7 @@ memmlib.NumbersMemmit.prototype.checkGuessit = function() {
     var elements = this.findChildrenBySelector('.mt-numbers-number-input');
     var expectedNnumbers = this.data.numbers;
     for (var i = 0; i < elements.length; i++) {
-        if (elements.item(i).innerText != expectedNnumbers[i].toString()) {
+        if (elements.item(i).innerHTML != expectedNnumbers[i].toString()) {
             this.markNumberInputWrong(i);
             result = false;
         } else {
@@ -503,7 +503,7 @@ memmlib.NumLettersMemmit.prototype.mouseLeaveLetter = function(e) {
 memmlib.NumLettersMemmit.prototype.selectLetterVariant = function(e) {
     var variantEl = e.currentTarget;
     var letterEl = this.findChildBySelector('[data-numletter-num="'+this.hoverLetterNum+'"]').firstElementChild;
-    letterEl.innerText = variantEl.innerText;
+    letterEl.innerHTML = variantEl.innerHTML;
     this.hideChildBySelector('[data-numletter-num="'+this.hoverLetterNum+'"] .mt-numletters-letter-chooser');
 };
 
@@ -571,7 +571,7 @@ memmlib.NumLettersMemmit.prototype.checkGuessit = function() {
         letterVariants = expectedLetters[i].repr;
         variantMatch = false;
         for (var j = 0; j < letterVariants.length; j++) {
-            if (elements.item(i).innerText == letterVariants[j]) {
+            if (elements.item(i).innerHTML == letterVariants[j]) {
                 variantMatch = true;
             }
         }
@@ -621,7 +621,7 @@ memmlib.WordsMemmit.prototype.getInputByNum = function(inputNum) {
 memmlib.WordsMemmit.prototype.updateData = function() {
     var wordElements = this.findChildrenBySelector('.mt-words-word');
     for (var i = 0; i < wordElements.length; i++) {
-        this.data.words[i] = wordElements[i].innerText;
+        this.data.words[i] = wordElements[i].innerHTML;
     }
 };
 
@@ -673,7 +673,7 @@ memmlib.WordsMemmit.prototype.checkGuessit = function() {
     var elements = this.findChildrenBySelector('.mt-words-word-input');
     var expectedWords = this.data.words;
     for (var i = 0; i < elements.length; i++) {
-        if (elements.item(i).innerText != expectedWords[i]) {
+        if (elements.item(i).innerHTML != expectedWords[i]) {
             this.markWordInputWrong(i);
             result = false;
         } else {

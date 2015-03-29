@@ -108,3 +108,24 @@ body {
     margin: 10px;
 }
 .language-option:hover {color: #3e3e3e;}
+
+
+.credit-bar {
+    background-color: #e0e0e0;
+    bottom: 0;
+    color: #a0a0a0;
+    display: block;
+    font-size: 9pt;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+.credit-name {
+    color: #808080;
+    text-decoration: none;
+}
+a.credit-name:hover {
+    text-decoration: underline;
+}
